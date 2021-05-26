@@ -70,3 +70,8 @@ def add_passport(request):
             passport.visited_countries.set(form.cleaned_data['visited_countries'])
 
         return redirect('add_passport')
+
+
+def person_details(request, person_id):
+    person = Person.objects.get(id=person_id)
+    return render(request, 'person_details.html', {'person':person})

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title%}
+{{person}} - details
+{% endblock %}
+
+{% block content %}
+
+<h1>{{person}} Details</h1>
+
+<ul>
+    <li>passport ID: {{ person.passport.pass_id }}</li>
+    <li>last visited country: {{ person.passport.last_country_visited }} </li>
+    <li>Visited countries:
+        <ul>
+            {% for country in person.passport.visited_countries.all %}
+                <li>{{country.name}}</li>
+            {% endfor %}
+        </ul>
+    </li>
+</ul>
+
+{% endblock %}

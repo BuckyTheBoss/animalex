@@ -10,5 +10,7 @@ urlpatterns = [
     path('add_family/', views.add_family, name='add_family'),
     path('add_person/', views.add_person, name='add_person'),
     path('add_passport/', views.add_passport, name='add_passport'),
+    path('view_person/<int:person_id>/', views.person_details, name='person_deets'),
+    
 ]
 

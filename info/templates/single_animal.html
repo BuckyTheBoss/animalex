@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title%}
+Animal - {{ animal.name }}
+{% endblock %}
+
 {% block content %}
 <h1>hello from single animal</h1>
 
@@ -8,6 +12,7 @@
     <li>legs: {{ animal.legs }}</li>
     <li>speed: {{ animal.speed }}</li>
     <li>family name:{{ animal.family.name }}</li>
+    <a class='btn btn-dark' href="{% url 'single_family' animal.family.id %}">Show family</a>
 
 </ul>
 

@@ -38,6 +38,10 @@ class Person(models.Model):
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 
+    def last_country_visited(self):
+        if self.passport:
+            return self.passport.last_country_visited()
+
 
 class Passport(models.Model):
     person = models.OneToOneField(Person, on_delete=models.CASCADE)

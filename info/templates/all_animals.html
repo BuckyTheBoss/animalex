@@ -4,16 +4,21 @@
 All animals
 {% endblock %}
 
-{% block content%}
+{% block content %}
     <h1>All Animals</h1>
-    {% for animal in all_animals %}
+
+  {% for animal in all_animals %}
     
     <ul>
-        <li>name: {{ animal.name }}</li>
+    
+     
+    
+        <li>name:{{ animal.name }} </li>
         <li>legs: {{ animal.legs }}</li>
         <li>speed: {{ animal.speed }}</li>
         <li>family name:{{ animal.family.name }}</li>
         <a href="{% url 'single_animal' animal.id %}">View animal {{animal.name}}</a>
+     
     </ul>
     <hr>
     {% endfor %}

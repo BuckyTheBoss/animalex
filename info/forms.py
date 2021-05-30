@@ -9,6 +9,12 @@ class AnimalForm(forms.Form):
     speed = forms.FloatField()
     family = forms.ModelChoiceField(queryset=Family.objects.all())
 
+class AnimalModelForm(forms.ModelForm):
+    class Meta:
+        model = Animal
+        # exclude = ['legs']
+        fields = '__all__'
+
 
 class FamilyForm(forms.Form):
     name = forms.CharField(max_length=40)

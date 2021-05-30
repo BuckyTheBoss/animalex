@@ -5,7 +5,7 @@ from . import views
 urlpatterns = [
     path('animals/', views.AnimalListView.as_view(), name='all_animals'),
     path('specific/animals/', views.FourLeggedAnimalListView.as_view(), name='specific_animals'),
-    path('animal/<int:pk>/', views.AnimalDetailView.as_view(), name='single_animal'),
+    path('animal/<int:pk>/', views.single_animal, name='single_animal'),
     path('family/<int:family_id>/', views.single_family, name='single_family'),
     path('add_animal/', views.add_animal, name='add_animal'),
     path('add_animal_model/', views.AnimalCreateView.as_view(), name='add_animal_model'),

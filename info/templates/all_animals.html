@@ -6,14 +6,14 @@ All animals
 
 {% block content %}
     <h1>All Animals</h1>
+    
 
   {% for animal in all_animals %}
     
     <ul>
     
      
-    
-        <li>name:{{ animal.name }} </li>
+        <li>name:{% firstof animal.name 'Does not have name' %} </li>
         <li>legs: {{ animal.legs }}</li>
         <li>speed: {{ animal.speed }}</li>
         <li>family name:{{ animal.family.name }}</li>
